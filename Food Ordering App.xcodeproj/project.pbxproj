@@ -11,6 +11,9 @@
 		EA5DA3BB29509508004E2C30 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5DA3BA29509508004E2C30 /* ContentView.swift */; };
 		EA5DA3BD2950950B004E2C30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA5DA3BC2950950B004E2C30 /* Assets.xcassets */; };
 		EA5DA3C02950950B004E2C30 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA5DA3BF2950950B004E2C30 /* Preview Assets.xcassets */; };
+		EA5DA3CA295098C1004E2C30 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5DA3C9295098C1004E2C30 /* Home.swift */; };
+		EA5DA3CC295098F7004E2C30 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5DA3CB295098F7004E2C30 /* HomeViewModel.swift */; };
+		EA5DA3CE2950A67B004E2C30 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5DA3CD2950A67B004E2C30 /* Menu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		EA5DA3BA29509508004E2C30 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EA5DA3BC2950950B004E2C30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA5DA3BF2950950B004E2C30 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EA5DA3C9295098C1004E2C30 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		EA5DA3CB295098F7004E2C30 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		EA5DA3CD2950A67B004E2C30 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +57,9 @@
 		EA5DA3B729509508004E2C30 /* Food Ordering App */ = {
 			isa = PBXGroup;
 			children = (
+				EA5DA3C8295098B0004E2C30 /* ViewModel */,
+				EA5DA3C7295098AA004E2C30 /* Model */,
+				EA5DA3C6295098A2004E2C30 /* Views */,
 				EA5DA3B829509508004E2C30 /* Food_Ordering_AppApp.swift */,
 				EA5DA3BA29509508004E2C30 /* ContentView.swift */,
 				EA5DA3BC2950950B004E2C30 /* Assets.xcassets */,
@@ -65,6 +74,30 @@
 				EA5DA3BF2950950B004E2C30 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EA5DA3C6295098A2004E2C30 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EA5DA3C9295098C1004E2C30 /* Home.swift */,
+				EA5DA3CD2950A67B004E2C30 /* Menu.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EA5DA3C7295098AA004E2C30 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EA5DA3C8295098B0004E2C30 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EA5DA3CB295098F7004E2C30 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +171,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA5DA3BB29509508004E2C30 /* ContentView.swift in Sources */,
+				EA5DA3CA295098C1004E2C30 /* Home.swift in Sources */,
 				EA5DA3B929509508004E2C30 /* Food_Ordering_AppApp.swift in Sources */,
+				EA5DA3CC295098F7004E2C30 /* HomeViewModel.swift in Sources */,
+				EA5DA3CE2950A67B004E2C30 /* Menu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,11 +305,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Food Ordering App/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please AllowTo Read Location For Delivery";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -297,11 +335,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Food Ordering App/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please AllowTo Read Location For Delivery";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

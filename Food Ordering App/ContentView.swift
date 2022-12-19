@@ -9,12 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Food Ordering App")
-            .frame(width: .infinity)
-            .padding()
-            .foregroundColor(.white)
-            .background(Color.green.cornerRadius(15))
-            
+        Home()
     }
 }
 
