@@ -33,21 +33,45 @@ struct Home: View {
                 .padding([.horizontal,.top])
                 Divider()
                 HStack(spacing: 15) {
+                    Image(systemName: "magnifyingglass")
+                        .font(.title2)
+                        .foregroundColor(.gray)
                     TextField("Search", text: $HomeModel.search)
-                    if HomeModel.search != ""{
-                        withAnimation(.easeInOut) {
-                            Button(action: {}) {
-                                Image(systemName: "magnifyingglass")
-                                    .font(.title2)
-                                    .foregroundColor(.gray)
-                            }
-                        }
-                    }
                 }
                 .padding(.horizontal)
                 .padding(.top, 10)
                 Divider()
-                Spacer()
+                ScrollView(.vertical, showsIndicators: false) {
+                    VStack(spacing: 25) {
+                        ForEach(HomeModel.filtered) { item in
+                            // Item View...
+                            ZStack(alignment: Alignment(horizontal: .center, vertical: .top)){
+                                ItemView(item: item)
+                                HStack{
+                                    Text("FREE DELIVERY")
+                                        .foregroundColor(.white)
+                                        .padding(.vertical, 10)
+                                        .padding(.horizontal)
+                                        .background(Color.pink.cornerRadius(20))
+                                    Spacer(minLength: 0)
+                                    Button {
+                                        // for adding the prder to the Cart.
+                                    } label: {
+                                        Image(systemName: "plus")
+                                            .foregroundColor(.white)
+                                            .padding(10)
+                                            .background(Color.pink)
+                                            .clipShape(Circle())
+                                    }
+                                }
+                                .padding([.leading,.trailing], 10)
+                                .padding(.top, 10)
+                            }
+                            .frame(width: UIScreen.main.bounds.width - 30)
+                        }
+                    }
+                    .padding(.top, 10)
+                }
             }
             // Slide menu...
             HStack{
@@ -76,6 +100,19 @@ struct Home: View {
         .onAppear {
             // calling location delegate
             HomeModel.locationManager.delegate = HomeModel
+        }
+        .onChange(of: HomeModel.search) { newValue in
+            // to avoid continues search requests...
+            DispatchQueue.main.asyncAfter(deadline: .now()+0.3) {
+                if newValue == HomeModel.search && HomeModel.search != ""{
+                    // search data...
+                    HomeModel.filterData()
+                }
+                if HomeModel.search == "" {
+                    // reset all data...
+                    withAnimation(.default) {HomeModel.filtered = HomeModel.items}
+                }
+            }
         }
     }
 }

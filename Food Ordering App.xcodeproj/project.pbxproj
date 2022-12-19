@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B812D225670B09A675871390 /* Pods_Food_Ordering_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A50EE0E6EB9C742FCEC4E9 /* Pods_Food_Ordering_App.framework */; };
 		EA5DA3B929509508004E2C30 /* Food_Ordering_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5DA3B829509508004E2C30 /* Food_Ordering_AppApp.swift */; };
 		EA5DA3BB29509508004E2C30 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5DA3BA29509508004E2C30 /* ContentView.swift */; };
 		EA5DA3BD2950950B004E2C30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA5DA3BC2950950B004E2C30 /* Assets.xcassets */; };
@@ -14,9 +15,16 @@
 		EA5DA3CA295098C1004E2C30 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5DA3C9295098C1004E2C30 /* Home.swift */; };
 		EA5DA3CC295098F7004E2C30 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5DA3CB295098F7004E2C30 /* HomeViewModel.swift */; };
 		EA5DA3CE2950A67B004E2C30 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5DA3CD2950A67B004E2C30 /* Menu.swift */; };
+		EA5DA3D22950C2F7004E2C30 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA5DA3D12950C2F7004E2C30 /* GoogleService-Info.plist */; };
+		EAB135C52950CE150022E510 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB135C42950CE150022E510 /* Item.swift */; };
+		EAB135C72950D34E0022E510 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB135C62950D34E0022E510 /* ItemView.swift */; };
+		EAB135CA2950D4340022E510 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = EAB135C92950D4340022E510 /* SDWebImageSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01CFBE1B979061BA49EA7A65 /* Pods-Food Ordering App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Ordering App.debug.xcconfig"; path = "Target Support Files/Pods-Food Ordering App/Pods-Food Ordering App.debug.xcconfig"; sourceTree = "<group>"; };
+		0574FA99B47DD6DDF01E8022 /* Pods-Food Ordering App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Ordering App.release.xcconfig"; path = "Target Support Files/Pods-Food Ordering App/Pods-Food Ordering App.release.xcconfig"; sourceTree = "<group>"; };
+		C1A50EE0E6EB9C742FCEC4E9 /* Pods_Food_Ordering_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Food_Ordering_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA5DA3B529509508004E2C30 /* Food Ordering App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Ordering App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA5DA3B829509508004E2C30 /* Food_Ordering_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food_Ordering_AppApp.swift; sourceTree = "<group>"; };
 		EA5DA3BA29509508004E2C30 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -25,6 +33,9 @@
 		EA5DA3C9295098C1004E2C30 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		EA5DA3CB295098F7004E2C30 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		EA5DA3CD2950A67B004E2C30 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		EA5DA3D12950C2F7004E2C30 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EAB135C42950CE150022E510 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		EAB135C62950D34E0022E510 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,17 +43,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAB135CA2950D4340022E510 /* SDWebImageSwiftUI in Frameworks */,
+				B812D225670B09A675871390 /* Pods_Food_Ordering_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9ED9A15F04E01FBE34CD0AB9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				01CFBE1B979061BA49EA7A65 /* Pods-Food Ordering App.debug.xcconfig */,
+				0574FA99B47DD6DDF01E8022 /* Pods-Food Ordering App.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DF8728E14320961487552B6A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C1A50EE0E6EB9C742FCEC4E9 /* Pods_Food_Ordering_App.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EA5DA3AC29509508004E2C30 = {
 			isa = PBXGroup;
 			children = (
 				EA5DA3B729509508004E2C30 /* Food Ordering App */,
 				EA5DA3B629509508004E2C30 /* Products */,
+				9ED9A15F04E01FBE34CD0AB9 /* Pods */,
+				DF8728E14320961487552B6A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +94,7 @@
 				EA5DA3C6295098A2004E2C30 /* Views */,
 				EA5DA3B829509508004E2C30 /* Food_Ordering_AppApp.swift */,
 				EA5DA3BA29509508004E2C30 /* ContentView.swift */,
+				EA5DA3D12950C2F7004E2C30 /* GoogleService-Info.plist */,
 				EA5DA3BC2950950B004E2C30 /* Assets.xcassets */,
 				EA5DA3BE2950950B004E2C30 /* Preview Content */,
 			);
@@ -81,6 +114,7 @@
 			children = (
 				EA5DA3C9295098C1004E2C30 /* Home.swift */,
 				EA5DA3CD2950A67B004E2C30 /* Menu.swift */,
+				EAB135C62950D34E0022E510 /* ItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -88,6 +122,7 @@
 		EA5DA3C7295098AA004E2C30 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EAB135C42950CE150022E510 /* Item.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -107,15 +142,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EA5DA3C32950950B004E2C30 /* Build configuration list for PBXNativeTarget "Food Ordering App" */;
 			buildPhases = (
+				CDCEE344A30164E4B780B2CF /* [CP] Check Pods Manifest.lock */,
 				EA5DA3B129509508004E2C30 /* Sources */,
 				EA5DA3B229509508004E2C30 /* Frameworks */,
 				EA5DA3B329509508004E2C30 /* Resources */,
+				3ECA491F12BB2BF35DA46E2B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Food Ordering App";
+			packageProductDependencies = (
+				EAB135C92950D4340022E510 /* SDWebImageSwiftUI */,
+			);
 			productName = "Food Ordering App";
 			productReference = EA5DA3B529509508004E2C30 /* Food Ordering App.app */;
 			productType = "com.apple.product-type.application";
@@ -144,6 +184,9 @@
 				Base,
 			);
 			mainGroup = EA5DA3AC29509508004E2C30;
+			packageReferences = (
+				EAB135C82950D4340022E510 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = EA5DA3B629509508004E2C30 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -160,10 +203,53 @@
 			files = (
 				EA5DA3C02950950B004E2C30 /* Preview Assets.xcassets in Resources */,
 				EA5DA3BD2950950B004E2C30 /* Assets.xcassets in Resources */,
+				EA5DA3D22950C2F7004E2C30 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3ECA491F12BB2BF35DA46E2B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Food Ordering App/Pods-Food Ordering App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Food Ordering App/Pods-Food Ordering App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Food Ordering App/Pods-Food Ordering App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CDCEE344A30164E4B780B2CF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Food Ordering App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EA5DA3B129509508004E2C30 /* Sources */ = {
@@ -174,6 +260,8 @@
 				EA5DA3CA295098C1004E2C30 /* Home.swift in Sources */,
 				EA5DA3B929509508004E2C30 /* Food_Ordering_AppApp.swift in Sources */,
 				EA5DA3CC295098F7004E2C30 /* HomeViewModel.swift in Sources */,
+				EAB135C72950D34E0022E510 /* ItemView.swift in Sources */,
+				EAB135C52950CE150022E510 /* Item.swift in Sources */,
 				EA5DA3CE2950A67B004E2C30 /* Menu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +385,7 @@
 		};
 		EA5DA3C42950950B004E2C30 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01CFBE1B979061BA49EA7A65 /* Pods-Food Ordering App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -327,6 +416,7 @@
 		};
 		EA5DA3C52950950B004E2C30 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0574FA99B47DD6DDF01E8022 /* Pods-Food Ordering App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -377,6 +467,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EAB135C82950D4340022E510 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EAB135C92950D4340022E510 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EAB135C82950D4340022E510 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EA5DA3AD29509508004E2C30 /* Project object */;
 }
