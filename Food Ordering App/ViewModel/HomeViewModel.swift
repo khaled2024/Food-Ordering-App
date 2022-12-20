@@ -20,7 +20,9 @@ class HomeViewModel: NSObject,ObservableObject,CLLocationManagerDelegate {
     //items data...
     @Published var items: [Item] = []
     @Published var filtered: [Item] = []
-    
+    // cart Items
+    @Published var cartItems: [Cart] = []
+    @Published var ordered: Bool = false
     
     //MARK: - Functions
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
@@ -61,7 +63,7 @@ class HomeViewModel: NSObject,ObservableObject,CLLocationManagerDelegate {
             self.userAddress = address
         }
     }
-    // anynoums login for reading db
+    //MARK: - anynoums login for reading db
     func login(){
         Auth.auth().signInAnonymously { res, error in
             if error != nil{
@@ -74,7 +76,7 @@ class HomeViewModel: NSObject,ObservableObject,CLLocationManagerDelegate {
             self.fetchData()
         }
     }
-    // Fetching item Data...
+    //MARK: - Fetching item Data...
     func fetchData(){
         let db = Firestore.firestore()
         db.collection("Items").getDocuments { snap, error in
@@ -92,12 +94,91 @@ class HomeViewModel: NSObject,ObservableObject,CLLocationManagerDelegate {
             self.filtered = self.items
         }
     }
-    // filter data...
+    //MARK: - filter data...
     func filterData(){
         withAnimation(.default, {
             self.filtered = self.items.filter({
                 return $0.item_name.lowercased().contains(self.search.lowercased())
             })
         })
+    }
+    //MARK: - add to cart func
+    func addToCart(item: Item){
+        // check it is added
+        self.items[getIndex(item: item, isCartIndex: false)].isAdded = !item.isAdded    //isAdded = true.
+        // updating fileter search
+        let filterIndex = self.filtered.firstIndex { (item1)-> Bool in
+            return item.id == item1.id
+        } ?? 0
+        self.filtered[filterIndex].isAdded = !item.isAdded //isAdded = true.
+        
+        if item.isAdded{
+            // removing from list
+            self.cartItems.remove(at: getIndex(item: item, isCartIndex: true))
+            return
+        }
+        // else adding
+        self.cartItems.append(Cart(item: item, quantity: 1))
+    }
+    
+    //MARK: - getIndex
+    func getIndex(item: Item,isCartIndex: Bool)-> Int{
+        let index = self.items.firstIndex { (item1)-> Bool in
+            return item.id == item1.id
+        } ?? 0
+        let cartIndex = self.cartItems.firstIndex { (item1)-> Bool in
+            return item.id == item1.item.id
+        } ?? 0
+        return isCartIndex ? cartIndex : index
+    }
+    //MARK: - calculate price
+    func calculatingTotalPrice()-> String{
+        var price: Float = 0
+        cartItems.forEach { item in
+            price += Float(item.quantity) * Float(truncating: item.item.item_cost)
+        }
+        return getPrice(value: price)
+    }
+    //MARK: - getPrice
+    func getPrice(value:Float)-> String{
+        let format = NumberFormatter()
+        format.numberStyle = .currency
+        return format.string(from: NSNumber(value: value)) ?? ""
+    }
+    //MARK: - writting order data into firebase...
+    func updateOrder(){
+        let db = Firestore.firestore()
+        // creating dic of food order...
+        
+        if ordered{
+            ordered = false
+            db.collection("Users").document(Auth.auth().currentUser!.uid).delete { error in
+                if error != nil {
+                    self.ordered = true
+                }
+            }
+            return
+        }
+        
+        var details: [[String:Any]] = []
+        cartItems.forEach { cart in
+            details.append([
+                "item_name" : cart.item.item_name,
+                "item_quantity" : cart.quantity,
+                "item_cost" : cart.item.item_cost,
+            ])
+        }
+        ordered = true
+        db.collection("Users").document(Auth.auth().currentUser!.uid).setData([
+            "ordered_food" : details,
+            "total_cost" : calculatingTotalPrice(),
+            "location" : GeoPoint(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
+        ]) { error in
+            if error != nil{
+                self.ordered = false
+                return
+            }
+            print("SUCCESS...")
+        }
     }
 }

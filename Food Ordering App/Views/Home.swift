@@ -41,36 +41,43 @@ struct Home: View {
                 .padding(.horizontal)
                 .padding(.top, 10)
                 Divider()
-                ScrollView(.vertical, showsIndicators: false) {
-                    VStack(spacing: 25) {
-                        ForEach(HomeModel.filtered) { item in
-                            // Item View...
-                            ZStack(alignment: Alignment(horizontal: .center, vertical: .top)){
-                                ItemView(item: item)
-                                HStack{
-                                    Text("FREE DELIVERY")
-                                        .foregroundColor(.white)
-                                        .padding(.vertical, 10)
-                                        .padding(.horizontal)
-                                        .background(Color.pink.cornerRadius(20))
-                                    Spacer(minLength: 0)
-                                    Button {
-                                        // for adding the prder to the Cart.
-                                    } label: {
-                                        Image(systemName: "plus")
+                if HomeModel.items.isEmpty{
+                    Spacer()
+                    ProgressView()
+                    Spacer()
+                }else{
+                    ScrollView(.vertical, showsIndicators: false) {
+                        VStack(spacing: 25) {
+                            ForEach(HomeModel.filtered) { item in
+                                // Item View...
+                                ZStack(alignment: Alignment(horizontal: .center, vertical: .top)){
+                                    ItemView(item: item)
+                                    HStack{
+                                        Text("FREE DELIVERY")
                                             .foregroundColor(.white)
-                                            .padding(10)
-                                            .background(Color.pink)
-                                            .clipShape(Circle())
+                                            .padding(.vertical, 10)
+                                            .padding(.horizontal)
+                                            .background(Color.pink.cornerRadius(20))
+                                        Spacer(minLength: 0)
+                                        Button {
+                                            // for adding the prder to the Cart.
+                                            HomeModel.addToCart(item: item)
+                                        } label: {
+                                            Image(systemName: item.isAdded ? "checkmark" : "plus")
+                                                .foregroundColor(.white)
+                                                .padding(10)
+                                                .background(item.isAdded ? Color.green : Color.pink)
+                                                .clipShape(Circle())
+                                        }
                                     }
+                                    .padding([.leading,.trailing], 10)
+                                    .padding(.top, 10)
                                 }
-                                .padding([.leading,.trailing], 10)
-                                .padding(.top, 10)
+                                .frame(width: UIScreen.main.bounds.width - 30)
                             }
-                            .frame(width: UIScreen.main.bounds.width - 30)
                         }
+                        .padding(.top, 10)
                     }
-                    .padding(.top, 10)
                 }
             }
             // Slide menu...

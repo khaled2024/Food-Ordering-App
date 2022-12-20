@@ -38,7 +38,8 @@ struct ItemView: View {
             .padding([.trailing,.leading,.bottom], 10)
             .padding(.vertical, 5)
         }
-        .background(.black.opacity(0.1))
+        .background(.white)
         .cornerRadius(20)
+        .shadow(color: .black.opacity(0.3), radius: 3, x: 3, y: 3)
     }
 }
